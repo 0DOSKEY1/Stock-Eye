@@ -1,0 +1,12 @@
+/home/parrot/Desktop/Stock-Eye/stock-eye/src/main/java/com/stockeye/service/ItemService.java
+/home/parrot/Desktop/Stock-Eye/stock-eye/src/main/java/com/stockeye/dto/LoginRequest.java
+/home/parrot/Desktop/Stock-Eye/stock-eye/src/main/java/com/stockeye/repository/ItemRepository.java
+/home/parrot/Desktop/Stock-Eye/stock-eye/src/main/java/com/stockeye/service/UserService.java
+/home/parrot/Desktop/Stock-Eye/stock-eye/src/main/java/com/stockeye/controller/ItemController.java
+/home/parrot/Desktop/Stock-Eye/stock-eye/src/main/java/com/stockeye/config/SecurityConfig.java
+/home/parrot/Desktop/Stock-Eye/stock-eye/src/main/java/com/stockeye/repository/UserRepository.java
+/home/parrot/Desktop/Stock-Eye/stock-eye/src/main/java/com/stockeye/controller/AuthController.java
+/home/parrot/Desktop/Stock-Eye/stock-eye/src/main/java/com/stockeye/model/Item.java
+/home/parrot/Desktop/Stock-Eye/stock-eye/src/main/java/com/stockeye/InventoryManagementApplication.java
+/home/parrot/Desktop/Stock-Eye/stock-eye/src/main/java/com/stockeye/dto/LoginResponse.java
+/home/parrot/Desktop/Stock-Eye/stock-eye/src/main/java/com/stockeye/model/User.java

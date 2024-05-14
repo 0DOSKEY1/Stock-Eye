@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventory Management - Inventory Management App</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <style>
+    /* Add any custom styles here */
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="#">Inventory Management</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Inventory</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Reports</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="mb-4">Inventory Management</h2>
+        <div class="card mb-4">
+          <div class="card-header">
+            <h5 class="card-title">Stock Items</h5>
+          </div>
+          <div class="card-body">
+            <!-- Table for displaying stock items -->
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">Item Name</th>
+                  <th scope="col">Quantity</th>
+                  <th scope="col">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Example row -->
+                <tr>
+                  <td>Product A</td>
+                  <td>200</td>
+                  <td>
+                    <!-- Buttons for actions (e.g., edit, delete) -->
+                    <button type="button" class="btn btn-sm btn-primary">Edit</button>
+                    <button type="button" class="btn btn-sm btn-danger">Delete</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Product B</td>
+                  <td>150</td>
+                  <td>
+                    <!-- Buttons for actions (e.g., edit, delete) -->
+                    <button type="button" class="btn btn-sm btn-primary">Edit</button>
+                    <button type="button" class="btn btn-sm btn-danger">Delete</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Product C</td>
+                  <td>100</td>
+                  <td>
+                    <!-- Buttons for actions (e.g., edit, delete) -->
+                    <button type="button" class="btn btn-sm btn-primary">Edit</button>
+                    <button type="button" class="btn btn-sm btn-danger">Delete</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Product D</td>
+                  <td>50</td>
+                  <td>
+                    <!-- Buttons for actions (e.g., edit, delete) -->
+                    <button type="button" class="btn btn-sm btn-primary">Edit</button>
+                    <button type="button" class="btn btn-sm btn-danger">Delete</button>
+                  </td>
+                </tr>
+                <!-- Additional rows will be dynamically added based on data -->
+              </tbody>
+            </table>
+            <!-- Button to add a new item -->
+            <button type="button" class="btn btn-primary">Add New Item</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <footer class="bg-dark text-white text-center py-4">
+    <div class="container">
+      <p>&copy; 2024 Inventory Management App</p>
+    </div>
+  </footer> -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.js"></script>
+  <script>
+    // Fetch inventory data from backend API
+    fetch('/api/items')
+      .then(response => response.json())
+      .then(data => {
+        // Populate table with inventory data
+        const tableBody = document.querySelector('tbody');
+        tableBody.innerHTML = '';
+
+        data.forEach(item => {
+          const row = `
+        <tr>
+          <td>${item.name}</td>
+          <td>${item.quantity}</td>
+          <td>
+            <button type="button" class="btn btn-sm btn-primary" onclick="editItem(${item.id})">Edit</button>
+            <button type="button" class="btn btn-sm btn-danger" onclick="deleteItem(${item.id})">Delete</button>
+          </td>
+        </tr>
+      `;
+          tableBody.innerHTML += row;
+        });
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('An error occurred while fetching inventory data.');
+      });
+
+  </script>
+</body>
+
+</html>
