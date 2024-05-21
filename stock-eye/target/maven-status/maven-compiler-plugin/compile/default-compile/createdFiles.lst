@@ -2,6 +2,7 @@ com/stockeye/service/ItemService.class
 com/stockeye/dto/LoginRequest.class
 com/stockeye/model/User.class
 com/stockeye/repository/UserRepository.class
+<<<<<<< HEAD
 com/stockeye/controller/ItemController.class
 com/stockeye/dto/RegisterRequest.class
 com/stockeye/config/TomcatConfig.class
@@ -12,5 +13,15 @@ com/stockeye/config/SecurityConfig.class
 com/stockeye/config/WebConfig.class
 com/stockeye/dto/LoginResponse.class
 com/stockeye/InventoryManagementApplication.class
+=======
+com/stockeye/controller/PageController.class
+com/stockeye/controller/ItemController.class
+com/stockeye/config/TomcatConfig.class
+com/stockeye/config/WebConfig.class
+com/stockeye/service/UserService.class
+com/stockeye/dto/LoginResponse.class
+com/stockeye/InventoryManagementApplication.class
+com/stockeye/model/Item.class
+>>>>>>> a30246bf1b04c7c7ec61de90f7905953395bfdc3
 com/stockeye/repository/ItemRepository.class
 com/stockeye/controller/AuthController.class
