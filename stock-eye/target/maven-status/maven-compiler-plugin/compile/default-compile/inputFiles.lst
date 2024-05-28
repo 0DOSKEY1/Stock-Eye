@@ -6,6 +6,7 @@
 /home/parrot/Desktop/Stock-Eye/stock-eye/src/main/java/com/stockeye/dto/LoginResponse.java
 /home/parrot/Desktop/Stock-Eye/stock-eye/src/main/java/com/stockeye/model/User.java
 /home/parrot/Desktop/Stock-Eye/stock-eye/src/main/java/com/stockeye/config/TomcatConfig.java
+/home/parrot/Desktop/Stock-Eye/stock-eye/src/main/java/com/stockeye/controller/ThymeleafController.java
 /home/parrot/Desktop/Stock-Eye/stock-eye/src/main/java/com/stockeye/service/ItemService.java
 /home/parrot/Desktop/Stock-Eye/stock-eye/src/main/java/com/stockeye/repository/ItemRepository.java
 /home/parrot/Desktop/Stock-Eye/stock-eye/src/main/java/com/stockeye/config/WebConfig.java

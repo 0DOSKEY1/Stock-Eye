@@ -19,6 +19,7 @@ import com.stockeye.service.ItemService;
 @RestController
 @RequestMapping("/api/items")
 public class ItemController {
+
     @Autowired
     private ItemService itemService;
 

@@ -3,16 +3,24 @@ com/stockeye/dto/LoginRequest.class
 com/stockeye/model/User.class
 com/stockeye/repository/UserRepository.class
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 968d500 (Thymeleaf Changes)
 com/stockeye/controller/ItemController.class
 com/stockeye/dto/RegisterRequest.class
 com/stockeye/config/TomcatConfig.class
 com/stockeye/service/UserService.class
+<<<<<<< HEAD
+=======
+com/stockeye/controller/ThymeleafController.class
+>>>>>>> 968d500 (Thymeleaf Changes)
 com/stockeye/model/Item.class
 com/stockeye/controller/PageController.class
 com/stockeye/config/SecurityConfig.class
 com/stockeye/config/WebConfig.class
 com/stockeye/dto/LoginResponse.class
 com/stockeye/InventoryManagementApplication.class
+<<<<<<< HEAD
 =======
 com/stockeye/controller/PageController.class
 com/stockeye/controller/ItemController.class
@@ -23,5 +31,7 @@ com/stockeye/dto/LoginResponse.class
 com/stockeye/InventoryManagementApplication.class
 com/stockeye/model/Item.class
 >>>>>>> a30246bf1b04c7c7ec61de90f7905953395bfdc3
+=======
+>>>>>>> 968d500 (Thymeleaf Changes)
 com/stockeye/repository/ItemRepository.class
 com/stockeye/controller/AuthController.class
