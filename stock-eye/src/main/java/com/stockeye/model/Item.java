@@ -20,6 +20,9 @@ public class Item {
     @Column(nullable = false)
     private int quantity;
 
+    @Column(nullable = false)
+    private String description;
+
     public Long getId() {
         return id;
     }
@@ -42,6 +45,14 @@ public class Item {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
 }

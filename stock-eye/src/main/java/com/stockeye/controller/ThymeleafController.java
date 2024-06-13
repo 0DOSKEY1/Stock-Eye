@@ -19,6 +19,13 @@ public class ThymeleafController {
         return "inventory";
     }
 
+    @GetMapping("/inventory/{id}")
+    public String showItemDetails(@PathVariable Long id, Model model) {
+        Item item = itemService.getItemById(id);
+        model.addAttribute("item", item);
+        return "item-details";
+    }
+
     @PostMapping("/inventory/add")
     public String addItem(@ModelAttribute Item item) {
         itemService.createItem(item);
@@ -27,6 +34,12 @@ public class ThymeleafController {
 
     @PostMapping("/inventory/update")
     public String updateItem(@ModelAttribute Item item) {
+        itemService.updateItem(item.getId(), item);
+        return "redirect:/inventory";
+    }
+
+    @PostMapping("/inventory/edit")
+    public String editItem(Item item) {
         itemService.updateItem(item.getId(), item);
         return "redirect:/inventory";
     }

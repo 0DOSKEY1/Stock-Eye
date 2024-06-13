@@ -7,9 +7,6 @@
   <title>Inventory Management - Inventory Management App</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-  <style>
-    /* Add any custom styles here */
-  </style>
 </head>
 
 <body>
@@ -27,7 +24,7 @@
             <a class="nav-link" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Inventory</a>
+            <a class="nav-link active" aria-current="page" href="/inventory">Inventory</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Reports</a>
@@ -60,7 +57,9 @@
               </thead>
               <tbody>
                 <tr th:each="item : ${items}">
-                  <td th:text="${item.name}">Item Name</td>
+                  <td>
+                    <a th:href="@{/inventory/{id}(id=${item.id})}" th:text="${item.name}">Item Name</a>
+                  </td>
                   <td th:text="${item.quantity}">Item Quantity</td>
                   <td>
                     <button type="button" class="btn btn-sm btn-primary"
@@ -97,6 +96,10 @@
               <label for="itemQuantity" class="form-label">Item Quantity</label>
               <input type="number" class="form-control" id="itemQuantity" name="quantity" required>
             </div>
+            <div class="mb-3">
+              <label for="itemDescription" class="form-label">Item Description</label>
+              <textarea class="form-control" id="itemDescription" name="description" required></textarea>
+            </div>
             <button type="submit" class="btn btn-primary">Add Item</button>
           </form>
         </div>
@@ -113,7 +116,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form th:action="@{/inventory/update}" method="post">
+          <form id="editItemForm" th:action="@{/inventory/edit}" method="post">
             <input type="hidden" id="editItemId" name="id">
             <div class="mb-3">
               <label for="editItemName" class="form-label">Item Name</label>
@@ -122,6 +125,10 @@
             <div class="mb-3">
               <label for="editItemQuantity" class="form-label">Item Quantity</label>
               <input type="number" class="form-control" id="editItemQuantity" name="quantity" required>
+            </div>
+            <div class="mb-3">
+              <label for="editItemDescription" class="form-label">Item Description</label>
+              <textarea class="form-control" id="editItemDescription" name="description" required></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Save Changes</button>
           </form>
@@ -135,24 +142,15 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.js"></script>
 
   <script>
-    function editItem(id) {
-      fetch(`/api/items/${id}`)
-        .then(response => response.json())
-        .then(item => {
-          document.getElementById('editItemId').value = item.id;
-          document.getElementById('editItemName').value = item.name;
-          document.getElementById('editItemQuantity').value = item.quantity;
-
-          var editItemModal = new bootstrap.Modal(document.getElementById('editItemModal'));
-          editItemModal.show();
-        })
-        .catch(error => {
-          console.error('Error:', error);
-          alert('An error occurred while fetching item data for editing.');
-        });
+    function editItem(id, name, quantity, description) {
+      document.getElementById('editItemId').value = id;
+      document.getElementById('editItemName').value = name;
+      document.getElementById('editItemQuantity').value = quantity;
+      document.getElementById('editItemDescription').value = description;
+      var editItemModal = new bootstrap.Modal(document.getElementById('editItemModal'));
+      editItemModal.show();
     }
   </script>
-
 </body>
 
 </html>
